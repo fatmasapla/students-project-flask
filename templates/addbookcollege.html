@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static' , filename='img/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}}">
+    <title>Thoab Al6alb</title>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="{{url_for('static' , filename='img/logo.png')}}" alt="logo">
+                    <h6>ثواب التلميذ</h6>
+                </a>
+            </div>
+            <ul>
+                <li><a href="/">الـصـفحـة الرئيسية</a></li>
+                <li><a href="/showbook">عرض الكتب</a></li>
+                {% if email != None %}
+                <li><a href="/logout">تسجيل خروج </a></li>
+                {% else %}
+                <li><a href="/signin">تسجيل الدخول</a></li>
+                <li><a href="/signup">عمل حساب </a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Start Home  -->
+    <section class="addbook home">
+        <div class="container">
+            <h2 class="add-title">أضــــافــــة كـــتـــب جامعيه</h2>
+            <form action="/addbook-handel-col" method="post" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="name"> أِســــم الكلية </label>
+                    <div class="input">
+                        <input type="text" name="col_name" id="name" class="input-control">
+                        <i class="fa-solid fa-suitcase-medical"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="dep_name"> التخصص</label>
+                    <div class="input">
+                        <input type="text" name="dep_name" id="dep_name" class="input-control">
+                        <i class="fa-solid fa-suitcase-medical"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="tem_name">الفرقة</label>
+                    <div class="input">
+                        <input type="text" name="tem_name" id="tem_name" class="input-control">
+                        <i class="fa-solid fa-suitcase-medical"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="book_name"> أِســــم الكتاب</label>
+                    <div class="input">
+                        <input type="text" name="book_name" id="book_name" class="input-control">
+                        <i class="fa-solid fa-suitcase-medical"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="user_ad"> عنوان صاحب الكتاب</label>
+                    <div class="input">
+                        <input type="text" name="user_ad" id="user_ad" class="input-control">
+                        <i class="fa-solid fa-suitcase-medical"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="user_phone"> هاتف صاحب الكتاب</label>
+                    <div class="input">
+                        <input type="text" name="user_phone" id="user_phone" class="input-control">
+                        <i class="fa-solid fa-suitcase-medical"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="img"> صوره الكتاب </label>
+                    <div class="input">
+                        <input type="file" name="img" id="img">
+                        <label for="img" class="input-control">
+                            أضافة صوره الكتاب
+                            <img src="{{url_for('static' , filename='img/book.png')}}" alt="book">
+                        </label>
+                    </div>
+                </div>
+                <input type="submit" class="btn" value="أضـــافـــة">
+            </form>
+        </div>
+        {% if msg %}
+        <h2 class="msg">{{msg}}</h2>
+        {% endif %}
+    </section>
+    <!-- End Home  -->
+
+</body>
+
+</html>

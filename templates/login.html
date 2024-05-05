@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{url_for('static' , filename='img/logo.png')}}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}}">
+    <title>Thoab Al6alb</title>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="{{url_for('static' , filename='img/logo.png')}}" alt="logo">
+                    <h6>ثواب التلميذ</h6>
+                </a>
+            </div>
+            <ul>
+                <li><a href="/">الـصـفحـة الرئيسية</a></li>
+                <li><a href="/showbook">عرض الكتب</a></li>
+                {% if email != None %}
+                <li><a href="/logout">تسجيل خروج </a></li>
+                {% else %}
+                <li><a href="/signin">تسجيل الدخول</a></li>
+                <li><a href="/signup">عمل حساب </a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Start Form  -->
+    <section class="login home">
+        <div class="container">
+            <form id="loginForm" method="post" action="/handel-login">
+                <div class="input-group">
+                    <label for="userEmail">البريد الالكترونى</label>
+                    <div class="input">
+                        <input type="text" name="userEmail" id="userEmail" class="input-control ">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="userPassword">كلمة السر</label>
+                    <div class="input">
+                        <input type="password" name="userPassword" id="userPassword" class="input-control">
+                    </div>
+                </div>
+                <input type="submit" id="login" name="register" value="تسجيل الدخول" class="btn" />
+                <h6 class="msg">لا تمتلك حساب يمكنك <a href="/signup">التسجيل</a></h6>
+            </form>
+            {% if msg %}
+            <h2 class="msg">{{msg}}</h2>
+            {% endif %}
+        </div>
+    </section>
+    <!-- End Form  -->
+</body>
+
+</html>

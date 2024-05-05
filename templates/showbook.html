@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static' , filename='img/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}}">
+    <title>Thoab Al6alb</title>
+</head>
+
+<body class="shwobook-page">
+    <!-- Start Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="{{url_for('static' , filename='img/logo.png')}}" alt="logo">
+                    <h6>ثواب التلميذ</h6>
+                </a>
+            </div>
+            <ul>
+                <li><a href="/">الـصـفحـة الرئيسية</a></li>
+                <li><a href="/showbook">عرض الكتب</a></li>
+                {% if email != None %}
+                <li><a href="/logout">تسجيل خروج </a></li>
+                {% else %}
+                <li><a href="/signin">تسجيل الدخول</a></li>
+                <li><a href="/signup">عمل حساب </a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Home  -->
+    <section class="shwobook">
+        <div class="container">
+            {% if data %}
+            <div class="books">
+                {% for book in data %}
+                <div class="item">
+                    <div class="inner">
+                        <div class="img">
+                            <img src="{{url_for('static', filename='uplode/')}}{{book[5]}}" alt="logo">
+                        </div>
+                        {% if book[8] == "college" %}
+                        <h6 class="role">كتب جامعية </h6>
+                        {% else %}
+                        <h6 class="role">كتب مدرسية </h6>
+                        {% endif %}
+                        <div class="info">
+                            <div class="lable">
+                                <span>اسم الكتاب</span>
+                                <h3>{{book[2]}}</h3>
+                            </div>
+                            <div class="lable">
+                                <span>التخصص</span>
+                                <h3>{{book[6]}}</h3>
+                            </div>
+                            <div class="lable">
+                                <span>المجال</span>
+                                <h3>{{book[2]}}</h3>
+                            </div>
+                            <div class="lable">
+                                <span>السنة الدراسية</span>
+                                <h3>{{book[7]}}</h3>
+                            </div>
+                            <div class="lable">
+                                <span>عنوان صاحب الكتاب</span>
+                                <h3>{{book[1]}}</h3>
+                            </div>
+                            <div class="lable">
+                                <span>عنوان صاحب الكتاب</span>
+                                <h3>{{book[1]}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/order" class="btn">طلب الكتاب</a>
+                </div>
+                {% endfor %}
+
+            </div>
+            {% endif %}
+        </div>
+    </section>
+    <!-- End Home  -->
+
+</body>
+
+</html>

@@ -1,0 +1,584 @@
+/* ============== Strat Varibale ============== */
+:root {
+  --main-color: #7ba0a8;
+}
+
+/* ============== Strat Varibale ============== */
+
+/* ============== Strat Global Roules ============== */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.clr {
+  clear: both;
+}
+
+.msg {
+  width: 30%;
+  color: white;
+  background-color: var(--main-color);
+  box-shadow: 0px 0px 1px white;
+  margin: 10px auto;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.btn {
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 30px;
+  margin: 20px 40px;
+  color: white;
+  border-width: 0px;
+  background-color: #7ba0a8;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: rgb(73, 123, 134);
+}
+/* ============== End Global Roules ============== */
+
+/* ============== Start Navbar ============== */
+.navbar {
+  background-color: #7ba0a8;
+  border-radius: 0px 0px 10px 10px;
+  width: 80%;
+  margin: auto;
+  position: fixed;
+  left: 120px;
+  z-index: 4;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding: 10px;
+}
+
+.navbar .container .logo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.navbar .container .logo img {
+  width: 70px;
+}
+.navbar .container .logo h6 {
+  color: white;
+  font-size: 20px;
+}
+.navbar .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+}
+
+.navbar .container ul li {
+  float: right;
+  padding: 15px;
+  list-style: none;
+}
+
+.navbar .container ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.navbar .container .research {
+  width: 250px;
+  height: 30px;
+  border: #ffffff 2px solid;
+  margin: 15px;
+  border-radius: 7px;
+  padding: 10px;
+  outline: #ffffff;
+}
+
+/* ============== End Navbar ============== */
+
+/* ============== Start Home ============== */
+.home {
+  background-image: url("../img/home-bg.png");
+  background-size: 100% 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+
+.home .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.home .container .slogn {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.home .container .slogn img {
+  width: 350px;
+}
+
+.home .container .main-p {
+  color: white;
+  padding: 0 10px;
+  font-size: 70px;
+  font-weight: 800;
+  transform: translateY(55px);
+}
+
+.home .container h1 {
+  color: white;
+  font-size: 60px;
+  font-weight: bolder;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ============== End Home ============== */
+
+/* ============== Start Form Style ============== */
+
+.addbook.home {
+  height: auto;
+  padding-bottom: 20px;
+}
+.addbook .add-title {
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #03a9f452;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 30px;
+}
+
+.addbook form {
+  width: 50%;
+  background: #ffffff1f;
+  padding: 20px;
+  border-radius: 10px;
+  -moz-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.addbook form .btn {
+  margin: 20px auto;
+  display: block;
+}
+
+.input-control {
+  border: 3px solid var(--main-color);
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  height: 60px;
+  line-height: 60px;
+  padding: 10px 20px 10px 50px;
+  transition: border-color 300ms linear;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.input-control:focus {
+  border: 3px solid #58bcd3;
+}
+
+.input-control::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.input {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: 50px;
+}
+
+.btn-form {
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  width: 200px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+form input[type="file"] {
+  display: none;
+}
+
+form input[type="file"] + label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+form input[type="file"] + label img {
+  width: 50px;
+  margin-right: auto;
+}
+
+/* ============== End Form Stayle ============== */
+
+.selectcatogry .container {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.selectcatogry .row a {
+  width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  margin-block: 40px;
+  margin-inline: auto;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.row p {
+  font-size: 25px;
+  color: var(--main-color);
+  text-align: center;
+  font-weight: 800;
+}
+
+/* ============== Start Form Style ============== */
+
+.addbook.home {
+  height: auto;
+  padding-bottom: 20px;
+}
+.addbook .add-title {
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #03a9f452;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 30px;
+}
+
+.addbook form {
+  width: 50%;
+  background: #ffffff1f;
+  padding: 20px;
+  border-radius: 10px;
+  -moz-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.addbook form .btn {
+  margin: 20px auto;
+  display: block;
+}
+
+.input-control {
+  border: 3px solid var(--main-color);
+  outline: none;
+  width: 100%;
+  border-radius: 10px;
+  height: 60px;
+  line-height: 60px;
+  padding: 10px 20px 10px 50px;
+  transition: border-color 300ms linear;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.input-control:focus {
+  border: 3px solid #58bcd3;
+}
+
+.input-control::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.input {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: 50px;
+}
+
+.btn-form {
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  width: 200px;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+form input[type="file"] {
+  display: none;
+}
+
+form input[type="file"] + label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+form input[type="file"] + label img {
+  width: 50px;
+  margin-right: auto;
+}
+
+/* ============== End Form Stayle ============== */
+
+/* ============== Start Login &  rejster  ============== */
+
+.login form {
+  width: 40%;
+  background: #ffffff1f;
+  padding: 20px;
+  border-radius: 10px;
+  -moz-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.login form .btn {
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+}
+
+.login .msg {
+  border: 2px dashed var(--main-color);
+  background-color: transparent;
+  font-size: 20px;
+  width: 50%;
+}
+.login .msg a {
+  color: var(--main-color);
+}
+/* ============== End Login &  rejster  ============== */
+
+/* ============== Start shwo book  ============== */
+.shwobook-page {
+  background-image: url("../img/home-bg.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100dvb;
+}
+.shwobook-page .shwobook {
+  padding-top: 100px;
+}
+
+.shwobook-page .shwobook .books {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.shwobook-page .shwobook .books .item {
+  width: calc((100% - 50px) / 3);
+  padding: 20px;
+}
+
+.shwobook-page .shwobook .books .inner {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 5px #d1d1d1;
+  cursor: pointer;
+}
+.shwobook-page .shwobook .books .item .btn {
+  margin: 10px auto;
+  display: block;
+}
+.shwobook-page .shwobook .books .inner .img {
+  width: 100%;
+  height: 100%;
+}
+.shwobook-page .shwobook .books .inner .img img {
+  width: 100%;
+  height: 100%;
+}
+
+.shwobook-page .shwobook .books .inner .info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000000b5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.shwobook-page .shwobook .books .inner:hover .info {
+  opacity: 1;
+}
+.shwobook-page .shwobook .books .inner .role {
+  position: absolute;
+  color: white;
+  background-color: var(--main-color);
+  font-size: 20px;
+  padding: 4px 31px;
+  top: 18px;
+  left: -30px;
+  transform: rotate(-36deg);
+  border-radius: 20px;
+  z-index: 2;
+}
+.shwobook-page .shwobook .books .inner .lable {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+}
+.shwobook-page .shwobook .books .inner .lable h3 {
+  text-align: center;
+}
+.shwobook-page .shwobook .books .inner .lable span {
+  display: block;
+  padding: 2px;
+  text-align: center;
+  width: 100%;
+  margin: 2px auto;
+  background-color: #307b859e;
+  border-radius: 42px;
+}
+/* ============== End shwo book  ============== */
+
+/*  
+.about {
+  background-color: #d0d6d6;
+  overflow: auto;
+}
+.about-img {
+  width: 50px;
+  float: left;
+}
+
+.container {
+  width: 80%;
+  background-color: #7ba0a8;
+  padding-block: 50px;
+  margin: 50px auto;
+  border-radius: 10px 10px 10px 10px;
+  text-align: center;
+}
+
+
+
+.containar_sec3 {
+  display: flex;
+  justify-content: space-between;
+  background-color: #7ba0a8;
+  width: 90%;
+  margin: auto;
+  border-radius: 10px;
+}
+.caption {
+  margin-left: 150px;
+  margin-bottom: 50px;
+  font-size: 30px;
+  color: white;
+}
+.form {
+  width: 400px;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 10px;
+
+  margin-top: 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.form p {
+  font-size: 25px;
+  width: 100%;
+  margin-right: 50px;
+  text-align: end;
+}
+.form_sec3 {
+  margin-top: 30px;
+  margin-right: 50px;
+}
+.right_side {
+  width: 400px;
+}
+.right_side img {
+  width: 100%;
+  height: 400px;
+}
+.button {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  margin-top: 30px;
+}
+.for5 {
+  color: black;
+  border-width: 0px;
+  padding: 10px 70px;
+  background-color: white;
+  border-radius: 10px;
+} */

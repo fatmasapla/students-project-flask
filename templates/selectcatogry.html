@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static' , filename='img/logo.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}}">
+    <title>Thoab Al6alb</title>
+</head>
+
+<body>
+    <!-- Start Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="{{url_for('static' , filename='img/logo.png')}}" alt="logo">
+                    <h6>ثواب التلميذ</h6>
+                </a>
+            </div>
+            <ul>
+                <li><a href="/">الـصـفحـة الرئيسية</a></li>
+                <li><a href="/showbook">عرض الكتب</a></li>
+                {% if email != None %}
+                <li><a href="/logout">تسجيل خروج </a></li>
+                {% else %}
+                <li><a href="/signin">تسجيل الدخول</a></li>
+                <li><a href="/signup">عمل حساب </a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Home  -->
+    <section class="home selectcatogry">
+        <div class="container">
+            <div class="row">
+                <a href="/addbook-col">
+                    <img src="{{url_for('static' , filename='img/graduation.png')}}" alt="graduation">
+                    <p class="btn-about btn-about2 "> كتب جامعيه</p>
+                </a>
+            </div>
+            <div class="row">
+                <a href="/addbook-school">
+                    <img src="{{url_for('static' , filename='img/school.png')}}" alt="graduation">
+                    <p class="btn-about"> كتب مدرسيه وخارجيه</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- End Home  -->
+
+</body>
+
+</html>
